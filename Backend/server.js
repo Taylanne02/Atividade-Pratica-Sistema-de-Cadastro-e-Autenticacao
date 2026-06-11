@@ -1,0 +1,21 @@
+// /Backend/server.js
+const express = require('express');
+const cors = require('cors');
+const routes = require('./routes/rota'); // Importa o arquivo de rotas
+
+// Apenas importar o database força a execução do arquivo e cria o banco/tabelas
+require('./database'); 
+
+const app = express();
+
+// Middlewares globais de conexão e comunicação
+app.use(express.json());
+app.use(cors());
+
+// Vincula todas as rotas isoladas ao servidor Express
+app.use(routes);
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando com sucesso na porta ${PORT}`);
+});
