@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 
-//Para o render, local só usa o app.use(cors) 
+//Para o render, para usar local só usa o app.use(cors) 
 app.use(cors({
     origin: [
         "https://atividade-pratica-sistema-cadastro-autenticacao-ga053e2fs.vercel.app"
