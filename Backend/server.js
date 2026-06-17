@@ -10,7 +10,10 @@ const app = express();
 
 // Middlewares globais de conexão e comunicação
 app.use(express.json());
-app.use(cors());
+//Para o render, local só usa o app.use(cors) 
+app.use(cors({
+    origin: "*"
+}));
 
 // Vincula todas as rotas isoladas ao servidor Express
 app.use(routes);
@@ -18,14 +21,9 @@ app.use(routes);
 
 const PORT = process.env.PORT || 3000;
 
-// Para o vercel 
-module.exports = app;
-
-
-
 // para usar normal, de cima para aplicação da web
 
-//const PORT = 3000;
-//app.listen(PORT, () => {
-  //  console.log(`Servidor rodando com sucesso na porta ${PORT}`);
-//});
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando com sucesso na porta ${PORT}`);
+});
