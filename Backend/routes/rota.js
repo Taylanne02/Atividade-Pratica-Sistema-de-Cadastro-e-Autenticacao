@@ -1,4 +1,4 @@
-// /Backend/routes.js
+// /Backend/routes/rota.js
 const express = require('express');
 const router = express.Router();
 const db = require('../database'); // Importa o banco de dados configurado

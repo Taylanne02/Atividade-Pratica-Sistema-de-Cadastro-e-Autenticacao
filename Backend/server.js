@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const routes = require('./routes/rota'); // Importa o arquivo de rotas
 
-// Apenas importar o database força a execução do arquivo e cria o banco/tabelas
+// Importar o database força a execução do arquivo e cria o banco/tabelas
 require('./database'); 
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use(cors({
     origin: [
-        "https://atividade-pratica-sistema-cadastro.vercel.app"
+        "https://atividade-pratica-sistema-cadastro.vercel.app/"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
