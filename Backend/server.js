@@ -15,7 +15,18 @@ app.use(cors());
 // Vincula todas as rotas isoladas ao servidor Express
 app.use(routes);
 
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Servidor rodando com sucesso na porta ${PORT}`);
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+
+
+// para usar normal, de cima para aplicação da web
+
+//const PORT = 3000;
+//app.listen(PORT, () => {
+  //  console.log(`Servidor rodando com sucesso na porta ${PORT}`);
+//});
