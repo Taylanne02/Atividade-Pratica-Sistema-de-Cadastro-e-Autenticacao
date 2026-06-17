@@ -12,7 +12,6 @@ const app = express();
 app.use(express.json());
 
 
-//Para o render, para usar local só usa o app.use(cors) 
 app.use(cors({
     origin: [
         "https://atividade-pratica-sistema-cadastro-autenticacao-ga053e2fs.vercel.app"
@@ -21,8 +20,8 @@ app.use(cors({
     credentials: true
 }));
 
-app.options("*", cors());
-// Vincula todas as rotas isoladas ao servidor Express
+app.options(/.*/, cors());
+
 app.use(routes);
 
 
