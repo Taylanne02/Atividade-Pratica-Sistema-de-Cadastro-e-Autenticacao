@@ -19,8 +19,10 @@ function Cadastro() {
     setMensagem(null);
     setErroAtivo(null);
     
+// 'http://localhost:3000/cadastro' quando for local 
+
     try {
-      const resposta = await axios.post('http://localhost:3000/cadastro', dados);
+      const resposta = await axios.post('https://projeto-cadastro-abc123.onrender.com/cadastro', dados);
       setMensagem(resposta.data.mensagem); // Feedback de sucesso
     } catch (error) {
       // Requisito 5: Tratamento de Exceções claro
