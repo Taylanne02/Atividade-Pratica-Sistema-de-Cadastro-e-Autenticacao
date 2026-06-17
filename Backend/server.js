@@ -10,11 +10,18 @@ const app = express();
 
 // Middlewares globais de conexão e comunicação
 app.use(express.json());
+
+
 //Para o render, local só usa o app.use(cors) 
 app.use(cors({
-    origin: "*"
+    origin: [
+        "https://atividade-pratica-sistema-cadastro-autenticacao-ga053e2fs.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
 }));
 
+app.options("*", cors());
 // Vincula todas as rotas isoladas ao servidor Express
 app.use(routes);
 
