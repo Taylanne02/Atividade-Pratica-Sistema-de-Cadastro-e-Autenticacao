@@ -6,18 +6,21 @@ function Menu() {
             <h1>Sistema de Cadastro</h1>
 
             <Link to="/cadastro">
-                <button>Cadastro</button>
+                 <button className="menu-button cadastro">Cadastro</button>
             </Link>
 
             <br /><br />
 
             <Link to="/login">
-                <button>Login</button>
+                 <button className="menu-button login">Login</button>
             </Link>
 
-            <Link to="/usuarios">
-                <button>Usuarios</button>
-            </Link>
+            <br /><br />
+            <div style={{ textAlign: 'center' }}>
+                <Link to="/usuarios">
+                    <button className="menu-button usuarios">Usuarios</button>
+                </Link>
+            </div>
         </div>
     );
 }

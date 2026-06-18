@@ -111,6 +111,27 @@
   gap: 8px;
   margin: 32px 0 0;
 
+/*Botões do menu, especificação dos nomes em baixo*/
+
+.menu-button {
+  width: 180px;
+  padding: 10px 12px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Especificando o nome */
+.cadastro {}
+.login {}
+.usuarios {}
+
+/* Responsive: full width on small screens */
+@media (max-width: 480px) {
+  .menu-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
   .logo {
     height: 18px;
   }

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Usuarios() {
 
     const [usuarios, setUsuarios] = useState([]);
     const [pagina, setPagina] = useState(1);
+    const navigate = useNavigate();
 
     useEffect(() => {
         carregarUsuarios();
@@ -21,6 +23,8 @@ function Usuarios() {
 
     return (
         <div>
+
+            <button onClick={() => navigate('/')}>Voltar</button>
 
             <h2>Lista de Usuários</h2>
 
