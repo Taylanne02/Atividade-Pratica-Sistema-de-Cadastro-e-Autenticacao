@@ -40,5 +40,74 @@ router.post('/cadastro', (req, res) => {
     });
 });
 
+
+// POST para Login
+router.post('/login', (req, res) => {
+
+    const { email, senha } = req.body;
+
+    if (!email || !senha) {
+        return res.status(400).json({
+            erro: "Preencha todos os campos."
+        });
+    }
+
+    const query =
+        "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
+
+    db.get(query, [email, senha], (err, usuario) => {
+
+        if (err) {
+            return res.status(500).json({
+                erro: "Erro no servidor."
+            });
+        }
+
+        if (!usuario) {
+            return res.status(401).json({
+                erro: "Email ou senha inválidos."
+            });
+        }
+
+        return res.status(200).json({
+            mensagem: "Login realizado com sucesso!",
+            usuario: {
+                id: usuario.id,
+                nome: usuario.nome,
+                email: usuario.email
+            }
+        });
+
+    });
+
+});
+
+//GET adicional para listar usuários com paginação
+router.get('/usuarios', (req, res) => {
+
+    const pagina = parseInt(req.query.pagina) || 1;
+
+    const limite = 5;
+
+    const offset = (pagina - 1) * limite;
+
+    const query =
+        `SELECT * FROM usuarios
+         LIMIT ? OFFSET ?`;
+
+    db.all(
+        query,
+        [limite, offset],
+        (err, usuarios) => {
+
+            if (err) {
+                return res.status(500).json(err);
+            }
+
+            res.json(usuarios);
+        }
+    );
+});
+
 // Exporta o roteador para ser acoplado no servidor principal
 module.exports = router;

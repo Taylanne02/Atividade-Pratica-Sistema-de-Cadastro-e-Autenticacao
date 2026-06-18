@@ -2,14 +2,16 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form'; // Requisito 2
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Cadastro() {
   // Inicialização do React Hook Form
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   
-  // useState retorna um array com 2 elementos [cite: 769] que usaremos para exibir feedback
+  // useState retorna um array com 2 elementos que usaremos para exibir feedback
   const [mensagem, setMensagem] = useState(null);
   const [erroAtivo, setErroAtivo] = useState(null);
+  const navigate = useNavigate();
 
   // Monitora o campo senha para validar a confirmação
   const senhaAtual = watch("senha");
@@ -36,6 +38,10 @@ function Cadastro() {
 
   return (
     <div className="container-formulario">
+
+      <button onClick={() => navigate('/')}>
+        Voltar
+      </button>
       <h2>Criar Conta</h2>
       
       {/* Exibição de exceções/sucesso */}

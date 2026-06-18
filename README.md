@@ -47,10 +47,11 @@ cd Frontend
 npm install
 ```
 
-## 4. Instala as bibliotecas (React Hook Form e Axios)
+## 4. Instala as bibliotecas (React Hook Form, Axios e Router)
 
 ```bash
 npm install react-hook-form axios
+npm install react-router-dom
 ```
 
 ----------------------
