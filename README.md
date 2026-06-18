@@ -98,7 +98,7 @@ node server.js
 npm run dev
 ```
 
-# Lnk das aplicações
+# Lnk das aplicações Vercel e Render
 
 ## Frontend
 
@@ -106,4 +106,4 @@ https://atividade-pratica-sistema-cadastro.vercel.app/
 
 ## Backend 
 
-https://atividade-pratica-sistema-de-cadastro-e.onrender.com 
+https://atividade-pratica-sistema-de-cadastro-e-0o27.onrender.com
