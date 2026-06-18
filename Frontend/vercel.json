@@ -1,5 +1,4 @@
 {
-"_comment": "Comentário, esse arquivo server pra corrigir o F5",
   "rewrites": [
     {
       "source": "/(.*)",
