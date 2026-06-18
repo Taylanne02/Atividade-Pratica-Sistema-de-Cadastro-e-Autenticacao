@@ -72,6 +72,7 @@ cd Backend
 ## 3. Inicializa o arquivo package.json padrão
 
 ```bash
+npm install
 npm init -y
 ```
 
