@@ -13,7 +13,7 @@ function Usuarios() {
     async function carregarUsuarios() {
 
         const resposta = await axios.get(
-            `https://atividade-pratica-sistema-de-cadastro-e-0o27.onrender.com/usuarios?pagina=${pagina}`
+            `https://atividade-pratica-sistema-de-cadastro-e-vpak.onrender.com/usuarios?pagina=${pagina}`
         );
 
         setUsuarios(resposta.data);

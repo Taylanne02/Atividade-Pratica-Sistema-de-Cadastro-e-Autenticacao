@@ -14,6 +14,10 @@ function Menu() {
             <Link to="/login">
                 <button>Login</button>
             </Link>
+
+            <Link to="/usuarios">
+                <button>Usuarios</button>
+            </Link>
         </div>
     );
 }
